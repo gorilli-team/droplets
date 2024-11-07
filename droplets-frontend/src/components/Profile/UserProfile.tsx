@@ -73,9 +73,9 @@ export default function UserProfile() {
                 <CardDescription>{vault.performance}%</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button variant="ghost" className="w-full">
+                <Button variant="outline" className="w-full">
                   <Shield className="w-4 h-4 mr-2" />
-                  Open Vault
+                  Deposit
                 </Button>
               </CardFooter>
             </Card>
