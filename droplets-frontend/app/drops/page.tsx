@@ -2,6 +2,7 @@
 import { Layout } from "@/components/Layout";
 import DropsList from "@/components/Drops/DropsList";
 import { mockedDrops } from "@/mockedData/mockedDrops";
+import DeployVault from "@/components/DeployVault";
 
 const handleNext = () => {};
 
@@ -33,6 +34,7 @@ export default function Drops() {
             Next
           </button>
         </div>
+        <DeployVault />
       </div>
     </Layout>
   );

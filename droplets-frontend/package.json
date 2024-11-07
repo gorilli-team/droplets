@@ -17,7 +17,7 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "react-player": "^2.16.0",
-    "viem": "2"
+    "viem": "^2.21.42"
   },
   "devDependencies": {
     "@types/node": "^20",

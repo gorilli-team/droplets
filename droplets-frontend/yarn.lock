@@ -7838,10 +7838,10 @@ vfile@^6.0.0:
     "@types/unist" "^3.0.0"
     vfile-message "^4.0.0"
 
-viem@2:
-  version "2.21.40"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-2.21.40.tgz#d73a515e3eaf2a7ec2394d1de3d8409bf4bd2e21"
-  integrity sha512-no/mE3l7B0mdUTtvO7z/cTLENttQ/M7+ombqFGXJqsQrxv9wrYsTIGpS3za+FA5a447hY+x9D8Wxny84q1zAaA==
+viem@^2.21.42:
+  version "2.21.42"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-2.21.42.tgz#c7d64b7ba3fa548d258384d0838eca7215fa9a8c"
+  integrity sha512-PWBb3iaVFAzLWUaNrYLweOGwHPTQid5J4HfERh/WjJgixbAFwb4ZEc1leRfygvgJPtqUGdYNapvw9b2k2FoCAg==
   dependencies:
     "@adraffy/ens-normalize" "1.11.0"
     "@noble/curves" "1.6.0"
