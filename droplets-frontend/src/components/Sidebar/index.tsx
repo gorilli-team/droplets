@@ -1,8 +1,10 @@
 // components/Sidebar.tsx
+"use client";
 import Link from "next/link";
 import { useAccount } from "@particle-network/connectkit";
 
 export default function Sidebar() {
+  console.log("useAccount:", useAccount);
   const { isConnected } = useAccount();
 
   return (

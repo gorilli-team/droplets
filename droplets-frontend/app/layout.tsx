@@ -2,6 +2,7 @@ import { ParticleConnectkit } from "@/connectkit";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ApolloProviderWrapper from "./ApolloProviderWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ParticleConnectkit>{children}</ParticleConnectkit>
+        <ApolloProviderWrapper>
+          <ParticleConnectkit>{children}</ParticleConnectkit>
+        </ApolloProviderWrapper>
       </body>
     </html>
   );

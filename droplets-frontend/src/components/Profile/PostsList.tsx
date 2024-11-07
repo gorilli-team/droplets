@@ -26,7 +26,17 @@ const getFromContentOnlyYoutubeUrl = (content: string): string | null => {
   return null; // Return null if no URL is found
 };
 
-export default function PostsList({ publications, profile, prev, next }) {
+export default function PostsList({
+  publications,
+  profile,
+  prev,
+  next,
+}: {
+  publications: any;
+  profile: any;
+  prev: any;
+  next: any;
+}) {
   console.log("check publications", publications);
   const [newPostContent, setNewPostContent] = useState("");
 
@@ -88,9 +98,11 @@ export default function PostsList({ publications, profile, prev, next }) {
                   {getFromContentOnlyYoutubeUrl(post.metadata?.content) && (
                     <div className="mt-4">
                       <YouTubePlayer
-                        url={getFromContentOnlyYoutubeUrl(
-                          post.metadata?.content
-                        )}
+                        url={
+                          getFromContentOnlyYoutubeUrl(
+                            post.metadata?.content
+                          ) as string
+                        }
                       />
                     </div>
                   )}
