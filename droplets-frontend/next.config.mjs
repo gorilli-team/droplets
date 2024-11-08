@@ -3,7 +3,7 @@ import path from "path";
 
 const nextConfig = {
   webpack: (config) => {
-    config.resolve.alias["@"] = path.resolve("src"); // Adjust path if `src` is not in the project root
+    config.resolve.alias["@"] = path.resolve(__dirname, "src");
     return config;
   },
 };
