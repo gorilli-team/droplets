@@ -1,6 +1,6 @@
-import { Layout } from '@/components/Layout';
-import ProfileDetailsClient from '@/components/Profile/ProfileDetailsClient';
-import UserProfile from '@/components/Profile/UserProfile';
+import { Layout } from "../../src/components/Layout";
+import ProfileDetailsClient from "../../src/components/Profile/ProfileDetailsClient";
+import UserProfile from "../../src/components/Profile/UserProfile";
 
 interface ProfileDetailsProps {
   params: {
