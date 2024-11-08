@@ -1,10 +1,9 @@
-'use client';
-import { Layout } from '@/components/Layout';
-import DropsList from '@/components/Drops/DropsList';
-import { mockedDrops } from '@/mockedData/mockedDrops';
-import DeployVault from '@/components/DeployVault';
-import { useEffect, useState } from 'react';
-import { Button } from '@/components/UI/button';
+"use client";
+import { Layout } from "@/components/Layout";
+import { mockedDrops } from "@/mockedData/mockedDrops";
+import DeployVault from "@/components/DeployVault";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/UI/button";
 import {
   Card,
   CardContent,
@@ -12,12 +11,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/UI/card';
-import { Edit, Lock, Plus, Settings, Shield } from 'lucide-react';
-import DeployVaultModal from '@/components/DeployVault';
-import { useApi, Vault } from '@/hooks/useApi';
-import { useAccount } from '@particle-network/connectkit';
-import { useAsyncMemo } from 'use-async-memo';
+} from "@/components/UI/card";
+import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
+import DeployVaultModal from "@/components/DeployVault";
+import { useApi, Vault } from "@/hooks/useApi";
+import { useAccount } from "@particle-network/connectkit";
+import { useAsyncMemo } from "use-async-memo";
 
 export default function Drops() {
   const { fetchAllVaults } = useApi();
@@ -25,16 +24,20 @@ export default function Drops() {
   const [showCreateVaultModal, setShowCreateVaultModal] = useState(false);
   const [showDepositModal, setShowDepositModal] = useState(false);
   const [refresh, setRefresh] = useState(false);
-  const [selectedVaultAddress, setSelectedVaultAddress] = useState('');
-  const [selectedVaultId, setSelectedVaultId] = useState('');
-  const [backers, setBackers] = useState<{ address: string; value: number }[]>([]);
+  const [selectedVaultAddress, setSelectedVaultAddress] = useState("");
+  const [selectedVaultId, setSelectedVaultId] = useState("");
+  const [backers, setBackers] = useState<{ address: string; value: number }[]>(
+    []
+  );
   const [vaultTotals, setVaultTotals] = useState<Record<string, number>>({});
-  const [loadingTotals, setLoadingTotals] = useState<Record<string, boolean>>({});
+  const [loadingTotals, setLoadingTotals] = useState<Record<string, boolean>>(
+    {}
+  );
   const [vaultsLoading, setVaultsLoading] = useState<boolean>(true);
 
   const ethToUsd = async (eth: number) => {
     const response = await fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`,
+      `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`
     );
     const data = await response.json();
     console.log(eth * data.ethereum.usd);
@@ -68,7 +71,10 @@ export default function Drops() {
       for (const vault of vaults) {
         setLoadingTotals((prev) => ({ ...prev, [vault._id as string]: true })); // Mark as loading
 
-        const totalEth = vault.backers.reduce((acc, cur) => acc + (cur.value || 0), 0);
+        const totalEth = vault.backers.reduce(
+          (acc, cur) => acc + (cur.value || 0),
+          0
+        );
         const usdValue = await ethToUsd(totalEth);
         setVaultTotals((prev) => ({
           ...prev,
@@ -109,10 +115,12 @@ export default function Drops() {
                       </CardTitle>
                       <CardDescription>2%</CardDescription>
                       <CardDescription>
-                        Total:{' '}
+                        Total:{" "}
                         {loadingTotals[vault._id as string]
-                          ? 'Loading...'
-                          : `$${vaultTotals[vault._id as string]?.toFixed(2) || 0}`}
+                          ? "Loading..."
+                          : `$${
+                              vaultTotals[vault._id as string]?.toFixed(2) || 0
+                            }`}
                       </CardDescription>
                     </CardHeader>
                     <CardFooter>
