@@ -14,7 +14,7 @@ import { arbitrum } from "viem/chains";
 // Import contract ABI and bytecode
 import dropletsVaultAbi from "@/abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
 
-export default function DeployDropletsVault() {
+export default function DeployVault() {
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   const publicClient = usePublicClient();
@@ -97,23 +97,13 @@ export default function DeployDropletsVault() {
   };
 
   return (
-    <div className="flex flex-col items-center p-8 bg-black text-white">
-      <h2 className="text-3xl font-bold mb-4">Deploy DropletsVault Contract</h2>
+    <div className="flex flex-col items-center p-8 text-black">
+      <h2 className="text-3xl font-bold mb-4">Deploy new Droplets Vault</h2>
 
       {/* Connect Button */}
       <div>
         {isConnected ? (
           <>
-            <div className="mb-4">
-              <p>Connected as: {address}</p>
-              <button
-                onClick={handleDisconnect}
-                className="mt-2 bg-red-600 py-2 px-4 rounded text-white"
-              >
-                Disconnect
-              </button>
-            </div>
-
             {/* Deployment Form */}
             <div className="w-full max-w-md">
               <label className="block mb-2">Asset Address:</label>
@@ -146,7 +136,7 @@ export default function DeployDropletsVault() {
                 <div className="mt-4 p-2 bg-green-600 rounded text-white">
                   Contract deployed at:{" "}
                   <a
-                    href={`https://etherscan.io/address/${deploymentAddress}`}
+                    href={`https://arbiscan.io/address/${deploymentAddress}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

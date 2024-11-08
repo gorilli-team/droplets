@@ -1,4 +1,5 @@
-import { Button } from '@/components/ui/button';
+"use client";
+import { Button } from "@/components/UI/button";
 import {
   Card,
   CardContent,
@@ -6,21 +7,41 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Edit, Lock, Plus, Settings, Shield } from 'lucide-react';
+} from "@/components/UI/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
+import { Badge } from "@/components/UI/badge";
+import { Modal } from "@/components/UI/modal";
+import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
+import { useState } from "react";
+import DeployVaultModal from "@/components/DeployVault";
+import DepositToVault from "../DepositToVault";
 
 export default function UserProfile() {
+  const [showCreateVaultModal, setShowCreateVaultModal] = useState(false);
+  const [showDepositModal, setShowDepositModal] = useState(false);
+
+  const handleCreateVault = async () => {
+    setShowCreateVaultModal(true);
+  };
+
+  const handleDeposit = async () => {
+    setShowDepositModal(true);
+  };
+
   return (
     <div className="p-6 space-y-8">
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold tracking-tight">Welcome back, Alex</h2>
+        <h2 className="text-3xl font-bold tracking-tight">
+          Welcome back, Alex
+        </h2>
 
         <Card>
           <CardHeader className="flex flex-row items-center gap-4">
             <Avatar className="w-16 h-16">
-              <AvatarImage src="/placeholder.svg?height=64&width=64" alt="Alex" />
+              <AvatarImage
+                src="/placeholder.svg?height=64&width=64"
+                alt="Alex"
+              />
               <AvatarFallback>AL</AvatarFallback>
             </Avatar>
             <div>
@@ -50,7 +71,7 @@ export default function UserProfile() {
       <section className="space-y-6">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-semibold tracking-tight">Your Vaults</h2>
-          <Button>
+          <Button onClick={handleCreateVault}>
             <Plus className="w-4 h-4 mr-2" />
             Create New Vault
           </Button>
@@ -58,11 +79,11 @@ export default function UserProfile() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { name: 'MEV Capital Vault', performance: 23.4 },
-            { name: 'Moonwell Flagship ETH', performance: 10.22 },
-            { name: 'Usual Boosted USDC', performance: 14.25 },
-            { name: 'Degen Vault', performance: 128 },
-            { name: 'Stablecoin Vault', performance: -0.03 },
+            { name: "MEV Capital Vault", performance: 23.4 },
+            { name: "Moonwell Flagship ETH", performance: 10.22 },
+            { name: "Usual Boosted USDC", performance: 14.25 },
+            { name: "Degen Vault", performance: 128 },
+            { name: "Stablecoin Vault", performance: -0.03 },
           ].map((vault) => (
             <Card key={vault.name}>
               <CardHeader>
@@ -73,7 +94,11 @@ export default function UserProfile() {
                 <CardDescription>{vault.performance}%</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button variant="outline" className="w-full">
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={handleDeposit}
+                >
                   <Shield className="w-4 h-4 mr-2" />
                   Deposit
                 </Button>
@@ -81,6 +106,22 @@ export default function UserProfile() {
             </Card>
           ))}
         </div>
+        {showCreateVaultModal && (
+          <Modal
+            isOpen={showCreateVaultModal}
+            onClose={() => setShowCreateVaultModal(false)}
+          >
+            <DeployVaultModal />
+          </Modal>
+        )}
+        {showDepositModal && (
+          <Modal
+            isOpen={showDepositModal}
+            onClose={() => setShowDepositModal(false)}
+          >
+            <DepositToVault />
+          </Modal>
+        )}
       </section>
     </div>
   );

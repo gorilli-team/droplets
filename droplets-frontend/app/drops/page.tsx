@@ -34,7 +34,11 @@ export default function Drops() {
             Next
           </button>
         </div>
-        <DeployVault />
+        <DeployVault
+          onClose={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
       </div>
     </Layout>
   );
