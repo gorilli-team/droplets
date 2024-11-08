@@ -15,7 +15,7 @@ import { Modal } from "../ui/modal";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
 import DeployVaultModal from "../DeployVault";
 import DepositToVault from "../DepositToVault";
-import { useApi, Vault } from "../hooks/useApi";
+import { useApi, Vault } from "../../hooks/useApi";
 import { useAccount } from "@particle-network/connectkit";
 import { useAsyncMemo } from "use-async-memo";
 
