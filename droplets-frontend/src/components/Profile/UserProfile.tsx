@@ -11,7 +11,7 @@ import {
 } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
-import { Modal } from "../ui/modal";
+import { Modal } from "./modal";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
 import DeployVaultModal from "../DeployVault";
 import DepositToVault from "../DepositToVault";
