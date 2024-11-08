@@ -1,7 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import YouTubePlayer from "react-player/youtube";
 import { useState } from "react";
-import { useAccount } from "wagmi";
 
 const formattedDate = (thisDate: string) => {
   return new Date(thisDate).toLocaleString("en-US", {
