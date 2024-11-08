@@ -22,7 +22,6 @@ With the rapid adoption of Web3 and the growing demand for decentralized finance
 
 - **Smart Contracts**: Built with **Solidity** and tested using **Foundry** to provide high-security vaults with ERC4626 compliance.
 - **Frontend**: Developed using **Next.js** to deliver a responsive, user-friendly interface for seamless Web3 interactions.
-- **Backend**: Utilizing **Node.js** for API handling and supporting Web3 integrations.
 
 ## **Getting Started**
 
