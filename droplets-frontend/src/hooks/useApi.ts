@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
 export interface Vault {
   _id?: string;
@@ -16,23 +16,32 @@ interface VaultsResponse {
   count: number;
 }
 
-export function useVaultApi() {
+export function useApi() {
   const [vaults, setVaults] = useState<Vault[]>([]);
   const [vault, setVault] = useState<Vault | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch all vaults
-  const fetchVaults = useCallback(async () => {
+  // Fetch all vaults or filter by ownerAddress
+  const fetchVaults = useCallback(async (ownerAddress?: string) => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}`);
-      if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+      // If ownerAddress is provided, add it as a query parameter
+      const url = ownerAddress
+        ? `${API_BASE_URL}/vaults?ownerAddress=${encodeURIComponent(
+            ownerAddress
+          )}`
+        : API_BASE_URL;
+
+      const response = await fetch(url);
+      if (!response.ok) {
+      }
 
       const data: VaultsResponse = await response.json();
       setVaults(data.vaults);
+      return data.vaults;
     } catch (err: any) {
       setError(err.toString());
     } finally {
@@ -46,7 +55,7 @@ export function useVaultApi() {
     setError(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/${id}`);
+      const response = await fetch(`${API_BASE_URL}/vaults/${id}`);
       if (!response.ok) throw new Error(`Error: ${response.statusText}`);
 
       const data: Vault = await response.json();
@@ -64,7 +73,7 @@ export function useVaultApi() {
     setError(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}`, {
+      const response = await fetch(`${API_BASE_URL}/vaults`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +100,7 @@ export function useVaultApi() {
       setError(null);
 
       try {
-        const response = await fetch(`${API_BASE_URL}/${id}`, {
+        const response = await fetch(`${API_BASE_URL}/vaults/${id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

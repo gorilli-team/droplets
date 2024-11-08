@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const VaultSchema = new mongoose.Schema({
   name: {
@@ -18,10 +18,13 @@ const VaultSchema = new mongoose.Schema({
       address: {
         type: String,
       },
+      value: {
+        type: Number,
+      },
     },
   ],
 });
 
-const Vault = mongoose.model('Vault', VaultSchema);
+const Vault = mongoose.model("Vault", VaultSchema);
 
 module.exports = Vault;

@@ -15,10 +15,16 @@ import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
 import { useState } from "react";
 import DeployVaultModal from "@/components/DeployVault";
 import DepositToVault from "../DepositToVault";
+import { useApi } from "@/hooks/useApi";
+import { useAccount } from "@particle-network/connectkit";
+import { useAsyncMemo } from "use-async-memo";
 
 export default function UserProfile() {
+  const { fetchVaults } = useApi();
+  const { address } = useAccount();
   const [showCreateVaultModal, setShowCreateVaultModal] = useState(false);
   const [showDepositModal, setShowDepositModal] = useState(false);
+  const [refresh, setRefresh] = useState(false);
 
   const handleCreateVault = async () => {
     setShowCreateVaultModal(true);
@@ -27,6 +33,21 @@ export default function UserProfile() {
   const handleDeposit = async () => {
     setShowDepositModal(true);
   };
+
+  const vaults = useAsyncMemo(async () => {
+    if (!address) return [];
+
+    console.log([
+      { name: "MEV Capital Vault", performance: 23.4 },
+      { name: "Moonwell Flagship ETH", performance: 10.22 },
+      { name: "Usual Boosted USDC", performance: 14.25 },
+      { name: "Degen Vault", performance: 128 },
+      { name: "Stablecoin Vault", performance: -0.03 },
+    ]);
+    return await fetchVaults(address);
+  }, [address, refresh]);
+
+  console.log(vaults);
 
   return (
     <div className="p-6 space-y-8">
@@ -78,40 +99,39 @@ export default function UserProfile() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { name: "MEV Capital Vault", performance: 23.4 },
-            { name: "Moonwell Flagship ETH", performance: 10.22 },
-            { name: "Usual Boosted USDC", performance: 14.25 },
-            { name: "Degen Vault", performance: 128 },
-            { name: "Stablecoin Vault", performance: -0.03 },
-          ].map((vault) => (
-            <Card key={vault.name}>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Lock className="w-5 h-5" />
-                  {vault.name}
-                </CardTitle>
-                <CardDescription>{vault.performance}%</CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <Button
-                  variant="outline"
-                  className="w-full"
-                  onClick={handleDeposit}
-                >
-                  <Shield className="w-4 h-4 mr-2" />
-                  Deposit
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+          {vaults?.length &&
+            vaults.map((vault) => (
+              <Card key={vault.name}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Lock className="w-5 h-5" />
+                    {vault.name}
+                  </CardTitle>
+                  <CardDescription>2%</CardDescription>
+                </CardHeader>
+                <CardFooter>
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    onClick={handleDeposit}
+                  >
+                    <Shield className="w-4 h-4 mr-2" />
+                    Deposit
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
         </div>
         {showCreateVaultModal && (
           <Modal
             isOpen={showCreateVaultModal}
             onClose={() => setShowCreateVaultModal(false)}
           >
-            <DeployVaultModal />
+            <DeployVaultModal
+              customCallback={() => {
+                setRefresh(!refresh);
+              }}
+            />
           </Modal>
         )}
         {showDepositModal && (

@@ -15,7 +15,12 @@ import { useApi } from "@/hooks/useApi";
 // Import contract ABI and bytecode
 import dropletsVaultAbi from "@/abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
 
-export default function DeployVault() {
+interface Props {
+  customCallback: () => void;
+}
+
+export default function DeployVault(props: Props) {
+  const { customCallback } = props;
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   const publicClient = usePublicClient();
@@ -91,6 +96,8 @@ export default function DeployVault() {
           imageUrl: "",
           backers: [],
         });
+
+        customCallback();
 
         console.log("Contract deployed at:", receipt.contractAddress);
         alert(`Contract deployed successfully at: ${receipt.contractAddress}`);
