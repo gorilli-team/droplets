@@ -43,7 +43,6 @@ export default function PostsList({
   console.log("check next", next);
   const ownedByAddress = profile?.ownedBy?.address;
 
-  const { address } = useAccount();
   console.log("check address", address);
 
   const handlePostSubmit = () => {
