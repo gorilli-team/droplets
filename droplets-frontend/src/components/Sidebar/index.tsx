@@ -1,8 +1,10 @@
 // components/Sidebar.tsx
-import Link from "next/link";
-import { useAccount } from "wagmi";
+'use client';
+import Link from 'next/link';
+import { useAccount } from '@particle-network/connectkit';
 
-export const Sidebar = () => {
+export default function Sidebar() {
+  console.log('useAccount:', useAccount);
   const { isConnected } = useAccount();
 
   return (
@@ -14,32 +16,23 @@ export const Sidebar = () => {
               <li>
                 <Link
                   href="/profile"
-                  className="block p-2 rounded bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition"
+                  className="block p-2 rounded bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition mb-4"
                 >
                   My Account
                 </Link>
               </li>
             )}
-            <Link
-              href="/drops"
-              className="block p-2 rounded hover:bg-purple-500 transition"
-            >
+            <Link href="/drops" className="block p-2 rounded hover:bg-purple-500 transition">
               Drops
             </Link>
           </li>
           <li>
-            <Link
-              href="/profiles"
-              className="block p-2 rounded hover:bg-purple-500 transition"
-            >
+            <Link href="/profiles" className="block p-2 rounded hover:bg-purple-500 transition">
               Profiles
             </Link>
           </li>
           <li>
-            <Link
-              href="/contact"
-              className="block p-2 rounded hover:bg-purple-500 transition"
-            >
+            <Link href="/contact" className="block p-2 rounded hover:bg-purple-500 transition">
               Contact
             </Link>
           </li>
@@ -47,4 +40,4 @@ export const Sidebar = () => {
       </nav>
     </aside>
   );
-};
+}
