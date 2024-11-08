@@ -8,7 +8,7 @@ export interface Vault {
   ownerAddress: string;
   vaultAddress: string;
   imageUrl?: string;
-  backers: { address: string }[];
+  backers: { address: string; value: number }[];
 }
 
 interface VaultsResponse {
