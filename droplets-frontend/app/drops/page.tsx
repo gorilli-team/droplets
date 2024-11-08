@@ -3,7 +3,7 @@ import { Layout } from "../../src/components/Layout";
 import { mockedDrops } from "../../src/mockedData/mockedDrops";
 import DeployVault from "../../src/components/DeployVault";
 import { useEffect, useState } from "react";
-import { Button } from "../../src/components/UI/button";
+import { Button } from "../../src/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../src/components/UI/card";
+} from "../../src/components/ui/card";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
 import DeployVaultModal from "../../src/components/DeployVault";
 import { useApi, Vault } from "../../src/hooks/useApi";

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Button } from "../UI/button";
+import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -8,14 +8,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../UI/card";
-import { Avatar, AvatarFallback, AvatarImage } from "../UI/avatar";
-import { Badge } from "../UI/badge";
-import { Modal } from "../UI/modal";
+} from "../ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Badge } from "../ui/badge";
+import { Modal } from "../ui/modal";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
 import DeployVaultModal from "../DeployVault";
 import DepositToVault from "../DepositToVault";
-import { useApi, Vault } from "@/hooks/useApi";
+import { useApi, Vault } from "../hooks/useApi";
 import { useAccount } from "@particle-network/connectkit";
 import { useAsyncMemo } from "use-async-memo";
 
