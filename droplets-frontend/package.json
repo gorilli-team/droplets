@@ -22,9 +22,10 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "react-player": "^2.16.0",
-    "viem": "^2.21.42",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-async-memo": "^1.2.5",
+    "viem": "^2.21.42"
   },
   "devDependencies": {
     "@types/node": "^20",

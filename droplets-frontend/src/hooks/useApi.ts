@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback } from 'react';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
@@ -30,10 +30,33 @@ export function useApi() {
     try {
       // If ownerAddress is provided, add it as a query parameter
       const url = ownerAddress
-        ? `${API_BASE_URL}/vaults?ownerAddress=${encodeURIComponent(
-            ownerAddress
-          )}`
+        ? `${API_BASE_URL}/vaults?ownerAddress=${encodeURIComponent(ownerAddress)}`
         : API_BASE_URL;
+
+      const response = await fetch(url);
+      if (!response.ok) {
+      }
+
+      const data: VaultsResponse = await response.json();
+      setVaults(data.vaults);
+      return data.vaults;
+    } catch (err: any) {
+      setError(err.toString());
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // Fetch all vaults or filter by ownerAddress
+  const fetchAllVaults = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+
+    console.log('fetching all vaults...');
+
+    try {
+      // If ownerAddress is provided, add it as a query parameter
+      const url = `${API_BASE_URL}/vaults`;
 
       const response = await fetch(url);
       if (!response.ok) {
@@ -74,9 +97,9 @@ export function useApi() {
 
     try {
       const response = await fetch(`${API_BASE_URL}/vaults`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(newVault),
       });
@@ -94,35 +117,30 @@ export function useApi() {
   }, []);
 
   // Update an existing vault by ID
-  const updateVault = useCallback(
-    async (id: string, updatedVault: Partial<Vault>) => {
-      setLoading(true);
-      setError(null);
+  const updateVault = useCallback(async (id: string, updatedVault: Partial<Vault>) => {
+    setLoading(true);
+    setError(null);
 
-      try {
-        const response = await fetch(`${API_BASE_URL}/vaults/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedVault),
-        });
-        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+    try {
+      const response = await fetch(`${API_BASE_URL}/vaults/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedVault),
+      });
+      if (!response.ok) throw new Error(`Error: ${response.statusText}`);
 
-        const data: Vault = await response.json();
-        setVaults((prevVaults) =>
-          prevVaults.map((v) => (v._id === id ? data : v))
-        );
-        return data;
-      } catch (err: any) {
-        setError(err.toString());
-        throw err;
-      } finally {
-        setLoading(false);
-      }
-    },
-    []
-  );
+      const data: Vault = await response.json();
+      setVaults((prevVaults) => prevVaults.map((v) => (v._id === id ? data : v)));
+      return data;
+    } catch (err: any) {
+      setError(err.toString());
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   return {
     vaults,
@@ -130,6 +148,7 @@ export function useApi() {
     loading,
     error,
     fetchVaults,
+    fetchAllVaults,
     fetchVaultById,
     createVault,
     updateVault,

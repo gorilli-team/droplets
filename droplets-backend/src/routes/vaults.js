@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Vault = require("../models/vault");
+const Vault = require('../models/vault');
 
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const vault = await Vault.findById(req.params.id);
     res.send(vault);
@@ -13,16 +13,21 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
+    console.log('getting vaults');
     const { ownerAddress } = req.query;
     let vaults;
+
+    console.log('req.query', req.query);
 
     if (ownerAddress) {
       vaults = await Vault.find({ ownerAddress });
     } else {
       vaults = await Vault.find();
     }
+
+    console.log('vaults', vaults);
 
     res.send({ vaults, count: vaults.length });
   } catch (error) {
@@ -32,9 +37,9 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    console.log("Adding Vault");
+    console.log('Adding Vault');
     const vault = new Vault(req.body);
     await vault.save();
 
@@ -46,7 +51,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const vault = await Vault.findByIdAndUpdate(req.params.id, req.body, {
       new: true,

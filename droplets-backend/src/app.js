@@ -20,6 +20,12 @@ app.use(function (req, res, next) {
 
 app.use(express.json());
 
+// Middleware to log API requests
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`); // Log the request method and URL
+  next(); // Call the next middleware or route handler
+});
+
 app.use('/', require('./routes/'));
 app.use('/vaults', require('./routes/vaults'));
 
