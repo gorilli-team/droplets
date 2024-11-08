@@ -1,0 +1,16 @@
+ 1506  forge script script/DeployDropletsVault.s.sol
+ 1507  forge script script/DeployDropletsVault.s.sol
+ 1508  forge build
+ 1509  forge build
+ 1510  forge script script/DeployDropletsVault.s.sol
+ 1511  forge script script/DeployDropletsVault.s.sol
+ 1512  forge script script/DeployDropletsVault.s.sol
+ 1513  forge script script/DeployDropletsVault.s.sol
+ 1514  forge script script/DeployDropletsVault.s.sol
+ 1515  ^[[200~history | grep 'forge script'
+ 1516  history | grep 'forge script'
+ 1517  history > command_history.txt
+ 1518  export HISTSIZE=2000\nexport HISTFILESIZE=2000
+ 1519  history > command_history.txt
+ 1520  export HISTSIZE=2000
+ 1521  export HISTFILESIZE=2000

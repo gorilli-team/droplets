@@ -1,0 +1,1491 @@
+forge build
+forge build
+forge build
+forge build
+forge test --match-test testDontAllowPlayersWhileRaffleIsCalculating -vvvv
+forge test --match-test testDontAllowPlayersWhileRaffleIsCalculating -vvvv
+forge test --match-test testDontAllowPlayersWhileRaffleIsCalculating -vvvv
+forge install transmission11/solmate@6 --no-commit
+forge install transmissions11/solmate@6 --no-commit
+forge install transmissions11/solmate@v6 --no-commit
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge build
+forge build
+forge build
+forge build
+forge test --help
+source .env
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account testKeys --broadcast
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account testKeys --broadcast
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account testKeys --broadcast
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account testKeys --broadcast
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account testKeys --broadcast
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account testKeys --broadcast
+cast wallet import dev1
+cast wallet import dev1 --interactive
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account dev1 --broadcast
+forge script script/Interactions.s.sol:FundSubscription --rpc-url $SEPOLIA_RPC_URL --account dev1 --broadcast
+forge script script/Interactions.s.sol:CheckMsgSender --rpc-url $SEPOLIA_RPC_URL --account dev1 --broadcast
+echo $SEPOLIA_RPC_URL
+forge script script/Interactions.s.sol:CheckMsgSender --rpc-url $SEPOLIA_RPC_URL --sender dev1 --broadcast
+forge script script/Interactions.s.sol:CheckMsgSender --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+cast -to-dec 0x4000aea00000000000000000000000009ddfaca8183c41ad55329bdeed9f6a8d53168b1b0000000000000000000000000000000000000000000000000de0b6b3a76400000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000002066f9ac6b323884d9b4cd3a7b1b3cc597c5c14b9e3eeb7e0352bb0cc8fcc5119a
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast -vvvv
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast -vvvv
+forge script script/Interactions.s.sol:FundSubscription  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast -vvvv
+git add --all
+git commit -m 'Progress'
+forge install Cyfrin/foundry-devops --no-commit
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge test
+forge test -vvv
+forge test -vvv
+forge test -vvv
+forge test --fork-url $SEPOLIA_RPC_URL
+forge test --fork-url $SEPOLIA_RPC_URL
+source .env
+forge test --fork-url $SEPOLIA_RPC_URL
+forge test --fork-url $SEPOLIA_RPC_URL --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb
+forge test --fork-url $SEPOLIA_RPC_URL --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb -vvvv
+forge test --fork-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb -vvvv
+forge test --fork-url $SEPOLIA_RPC_URL  -vvvv
+forge script script/Interactions.s.sol:AddConsumer  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast -vvvv
+forge script script/Interactions.s.sol:AddConsumer  --rpc-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb  --broadcast -vvvv
+code .
+cd Projects/
+ls
+cd Blockchain
+ls
+cd crypto-course
+ls
+cd ..
+cd ..
+cd Learning
+ls
+cd blockchain
+ls
+cd foundry-fundamentals
+ls
+cd foundry-lottery
+code .
+cd ..
+cd movolab-frontend
+yarn start
+npm remove cruip-js-toolkit
+yarn remove cruip-js-toolkit
+yarn start
+cd ..
+cd movolab-backend
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+forge coverage
+headers checkupkeep
+forge test
+forge test
+forge test
+forge coverage
+forge coverage --report debug
+forge coverage --report debug > coverage.txt
+forge test
+forge coverage
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge coverage
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+foundry test -vvvv
+forge test -vvvv
+forge test --mt testPerformUpkeepUpdatesRaffleStateAndEmitsRequestId  -vvvv
+forge test --mt testPerformUpkeepUpdatesRaffleStateAndEmitsRequestId  -vvvv
+forge test --mt testPerformUpkeepUpdatesRaffleStateAndEmitsRequestId  -vvvv
+forge test
+forge compile
+forge compile
+forge test
+forge test
+forge test -vvvv
+git status
+git add --all
+git commit -m 'Progress'
+git status
+git status
+git compile
+forge compile
+forge compile
+forge test
+forge test
+forge test
+forge test
+forge test -vvvv
+forge test -mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge compile
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge test --mt testFullfillRandomWordsPicksAWinnerResetsAndSendsMoney -vvv
+forge coverage
+git status
+git add --all
+git commit -m 'Progress'
+	forge test --fork-url $SEPOLIA_RPC_URL --account dev1 --sender 0xd045651D78d98cb33F21a9444A0c99DBbfA7aEcb -vvvv
+	forge test --fork-url $SEPOLIA_RPC_URL
+forge test --fork-url $SEPOLIA_RPC_URL
+echo $SECONDS
+source .env
+forge test --fork-url $SEPOLIA_RPC_URL
+forge build
+forge build
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test --fork-url $SEPOLIA_RPC_URL
+git status
+git add --all
+git commit -m 'End lesson'
+cd ..
+ls
+mkdir foundry-erc20
+forge init
+cd foundry-erc20
+forge init
+forge install openzeppelin/openzeppelin-contracts@v5.0.2 --no-commit
+forge build
+forge build
+forge install forge-std --no-commit
+forge script script/DeployBetterToken.s.sol
+forge script script/DeployBetterToken.s.sol
+forge script script/DeployBetterToken.s.sol
+forge script script/DeployBetterToken.s.sol
+forge script script/DeployBetterToken.s.sol --RPC-URL http://127.0.0.1:8545
+forge script script/DeployBetterToken.s.sol --rpc-url http://127.0.0.1:8545
+forge script script/DeployBetterToken.s.sol --rpc-url http://127.0.0.1:8545
+forge compile
+forge compile
+forge compile
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge build
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge compile
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+anvil
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+code .
+code .
+cd ..
+cd ..
+cd ..
+cd ..
+cd Blockchain
+cd commands
+code .
+cd ..
+cd ..
+cd Learning
+LS
+cd blockchain
+ls
+cd foundry-fundamentals
+ls
+cd foundry-lottery
+code .
+cd ..
+cd ../..
+cd ..
+cd Blockchain/commands
+code .
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn start
+cd ../movolab-backend
+yarn dev
+cd Projects
+cd Blockchain
+ls
+mkdir Lens
+cd Lens
+git clone https://github.com/iPaulPro/scaffold-lens\
+
+cd scaffold-lens
+ls
+yarn install
+yarn chain
+yarn start
+sudo n 18.17.0
+yarn start
+cd ..
+cd ..
+ls
+cd ..
+cd Projects
+ls
+cd paolo
+ls
+cd ..
+cd FiveElementsLabs
+ls
+cd Hackathons
+ls
+code ez-brussels
+cd Projects/Blockchain
+ls
+cd Lens
+ls
+rm -rf scaffold-lens
+mkdir crowdinvest
+cd crowdinvest
+mkdir frontend
+code .
+cd frontend
+ls
+rm -rf node_modules
+rm -rf .next
+yarn install
+sudo n 18.18.0
+yarn install
+yarn dev
+cd ..
+cd ..
+git clone https://github.com/lens-protocol/lens-sdk
+git clone https://github.com/lens-protocol/lens-sdk
+yarn dev
+ls
+cd frontend
+yarn dev
+yarn add @apollo/client
+yarn dev
+yarn add graphql
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn add @lens-protocol/react-web
+yarn add react-cool-inview
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn start
+cd ..
+cd movolab-backend
+yarn dev
+yarn add node-cron
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+forge init
+forge install OpenZeppelin/openzeppelin-contracts --no-commit
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+forge build
+cd Projects
+ls
+cd Blockchain
+ls
+cd ..
+cd Learning
+ls
+cd blockchain
+ls
+cd foundry-fundamentals
+ls
+mkdir foundry-nft
+cd foundry-
+cd foundry-nft
+code .
+cd ..
+cd foundry-lottery
+ls
+ls -alrth
+cd .vscode
+cat settings.json
+cd ../..
+cd foundry-nft
+code .
+cd ..
+cd foundry-erc20
+ls
+cd ..
+cd foundry-fund-me
+cd ..
+cd foundry-erc20
+cd .vscode
+ls
+cat settings.json
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+ cd ..
+cd Projects
+ls
+cd Blockchain
+ls
+cd Lens
+ls
+cd droplets
+ls
+cd frontend
+ls
+cd .vscode
+cd ../..
+cd ..
+cd ..
+cd Learning
+ls
+cd blockchain
+cd
+cd -
+ls
+cd foundry-fundamentals
+cd foundry-lottery
+ls
+code .
+cd ..
+cd foundry-nft
+forge build
+forge build
+forge build
+forge build
+forge build
+forge compile
+forge script script/DeployBasicNft.s.sol
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge install ChainAccelOrg/foundry-devops --no-commit
+cd script
+forge compile
+forge compile
+forge compile
+cd ..
+gmake deploy ARGS="--network sepolia"
+cd foundry-erc20
+git status
+git add --all
+git commit -m 'Progress'
+cd ../foundry-fund-me
+git status
+git add --all
+git commit -m 'Progress'
+git restore lib/chainlink-brownie-contracts 
+git ..
+cd ..
+cd foundry-simple-storage
+git add --all
+git commit -m 'Progress'
+cd ..
+cd foundry-fund-me
+git add --all
+git commit -m 'Progress'
+git status
+cd ..
+cd foundry-nft
+git add --all
+git commit -m 'Progress'
+gmake deploy ARGS="--network sepolia"
+gmake deploy ARGS="--network sepolia"
+gmake deploy ARGS="--network sepolia"
+gmake mint ARGS="--network sepolia"
+gmake mint ARGS="--network sepolia"
+gmake mint ARGS="--network sepolia"
+gmake mint
+gmake mint
+source .env
+gmake mint ARGS="--network sepolia"
+base64 --help
+cd img
+base64 -i example.svg
+base64 <svg viewBox="0 0 200 200" width="400"  height="400" xmlns="http://www.w3.org/2000/svg">\
+  <circle cx="100" cy="100" fill="yellow" r="78" stroke="black" stroke-width="3"/>\
+  <g class="eyes">\
+    <circle cx="70" cy="82" r="12"/>\
+    <circle cx="127" cy="82" r="12"/>\
+  </g>\
+  <path d="m136.81 116.53c.69 26.17-64.11 42-81.52-.73" style="fill:none; stroke: black; stroke-width: 3;"/>\
+</svg>
+base64 -i happy.svg
+yarn dev
+cd frontend
+yarn dev
+cd ..
+cd ..
+cd lens-sdk-main
+ls
+cd examples
+ls
+cd lens-next-app
+ls
+yarn install
+cd ../..
+cd ../..
+cd FiveElementsLabs
+ls
+cd SocialMedia
+ls
+cd lensalytics
+ls
+yarn install
+yarn dev
+yarn start
+yarn start
+yarn dev
+cd ..
+ks
+ls
+cd lens-leaderboard
+ls
+yarn install
+yarn dev
+cd ..
+ls
+cd ..
+ls
+cd ludulens
+ls
+yarn install
+yarn dev
+ls
+rm -rf node_modules
+find ~/ -name "node_modules" -type d -exec du -sh {} +\
+
+pwd
+find ~/Users/paoloantoniorossi/Projects  -name "node_modules" -type d -exec du -sh {} +\
+
+find /Users/paoloantoniorossi/Projects  -name "node_modules" -type d -exec du -sh {} +\
+
+find /Users/paoloantoniorossi/Projects  -name "node_modules" -type d -exec du -sh {} + | sort -hr\
+
+find /Users/paoloantoniorossi/Projects  -name "node_modules" -type d -exec du -sh {} + | sort -hr\
+
+npm install -g npm-check
+cd
+cd Projects
+ls
+cd Movolab
+cd movolab-frontend
+npm-check
+cd ..
+cd ../..
+cd droplets
+ls
+cd frontend
+yarn dev
+cd ../..
+ls
+cd ..
+cd ..
+cd FiveElementsLabs
+ls
+cd Hackathons
+ls
+cd ..
+cd 
+cd Projects
+ls
+mkdir gorilli
+cd gorilli
+mkdir droplets
+ls
+cd droplets
+ls
+mkdir frontend
+cd frontend
+yarn add next@latest react@latest react-dom@latest
+yarn dev
+yarn add --help
+yarn add -D tailwindcss
+yarn dev
+yarn add tailwindcss postcss autoprefixer
+npx tailwindcss init -p\
+
+yarn dev
+cd src/pages
+ls -alrth
+cd -
+yarn dev
+ls -alrth
+ls 
+yarn dev
+yarn dev
+yarn add @apollo/client
+yarn remove @apollo/client
+yarn add graphql-request
+yarn add graphql-request
+yarn remove graphql-request
+yarn add @apollo/client graphql\
+
+yarn dev
+git clone https://github.com/iPaulPro/scaffold-lens\
+
+ls
+cd scaffold-lens
+yarn install
+yarn chain
+yarn start
+cd ..
+cd movolab-frontend
+npm-check
+yarn remove @emotion/react
+yarn remove @emotion/styled 
+yarn remove sass
+yarn remove react-error-overlay
+yarn remove react-pdf
+yarn remove react-github-contribution-calendar
+yarn remove postcss-cli 
+npm-check
+yarn remove dotenv
+yarn remove date-fns
+yarn remove @mui/material
+npm-check
+yarn remove @testing-library/user-event
+npm-check
+yarn add sass
+npm-check
+yarn remove react-spinners
+npm-check
+npm-check
+yarn remove @testing-library/react 
+yarn remove @testing-library/jest-dom
+npm-check
+cd Projects
+cd Blockchain
+cd Lens
+ls
+cd droplets
+code .
+cd ..
+ls
+code .
+ls
+cd droplets
+ls
+cd frontend
+ls
+cd ..
+cd movolab-backend
+yarn start
+yarn start
+yarn start
+yarn install
+yarn dev
+yarn dev
+cd frontend
+yarn dev
+yarn add @web3-react/injected-connector
+yarn dev
+yarn add @web3-react/core
+yarn dev
+yarn add eventemitter3
+yarn dev
+yarn remove eventemitter3
+yarn remove @web3-react/core
+yarn remove @web3-react/injected-connector
+yarn dev
+ls
+cd ..
+ls
+cd frontend
+cd ..
+git init
+yarn dev
+cd frontend
+yarn dev
+yarn dev
+cd foundry-nft
+forge compile
+git status
+git add --all
+git commit -m 'Progress'
+forge compile
+forge compile
+forge build
+git add --all
+git commit -m 'Progress'
+git diff
+forge build
+forge build
+base64 -i img/happy.svg
+base64 -i img/sad.svg
+forge build
+ls
+cd src
+ls
+cd ..
+forge compile
+forge compile
+forge test
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+cd ../..
+cd ..
+cd ..
+cd gorilli
+ls
+cd droplets
+ls
+cd frontend
+ls
+yarn dev
+yarn dev
+yarn add react-markdown
+yarn dev
+cd Projects
+cd gorilli
+ls
+cd ../..
+cd Projects/Blockchain/Lens
+LS
+git clone git@github.com:dabit3/lens-protocol-frontend.git\
+
+git clone https://github.com/dabit3/lens-protocol-frontend.git
+ls
+cd lens-protocol-frontend
+code .
+cd ../..
+cd ..
+cd gorilli
+ls
+cd droplets
+code .
+cd ..
+cd ..
+cd Blockchain
+ls
+cd ../Learning
+ls
+cd blockchain
+ls
+cd foundry-fundamentals
+code .
+cd
+cd Projects/gorilli
+cd droplets
+code .
+yarn dev
+cd frontend
+yarn dev
+yarn add @heroicons/react
+yarn dev
+yarn remove @heroicons/react
+yarn add @heroicons/react@v1
+yarn dev
+yarn add react-player
+yarn dev
+cd ../movolab-frontend
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn remove sass
+yarn add -D sass
+cd ..
+cd movolab-backend
+yarn dev
+cd frontend
+yarn dev
+yarn add wagmi viem @wagmi/core
+yarn dev
+yarn add wagmi viem @wagmi/core
+yarn dev
+yarn add viem
+yarn remove wagmi viem @wagmi/core
+yarn add wagmi viem@2.x @tanstack/react-query
+yarn add @tanstack/react-query
+yarn dev
+cat package.json | grep "@tanstack/react-query"
+yarn cache clean
+yarn install
+cd foundry-nft
+ls
+git status
+git add --all
+git commit -m 'SVG progress'
+forge compile
+forge test
+forge test
+forge compile
+forge compile
+forge test
+forge test -vvvv
+cd ../movolab-frontend
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+cd ..
+cd movolab-backend
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn start
+cd foundry-nft
+forge compile
+forge build
+forge script script/DeployMoodNft.s.sol
+cd script
+forge script script/DeployMoodNft.s.sol
+cd ..
+forge script script/DeployMoodNft.s.sol
+forge build
+forge script script/DeployMoodNft.s.sol
+forge script script/DeployMoodNft.s.sol
+forge script script/DeployMoodNft.s.sol
+forge script script/DeployMoodNft.s.sol
+forge script script/DeployMoodNft.s.sol
+forge compile
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge script script/DeployMoodNft.s.sol
+forge script script/DeployMoodNft.s.sol
+forge compile
+forge script script/DeployMoodNft.s.sol
+forge script script/DeployMoodNft.s.sol
+forge test
+forge compile
+forge test
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+source .env
+forge test --rpc-url $SEPOLIA_RPC_URL
+forge coverage
+yarn dev
+cd frontend
+yarn dev
+cd ..
+yarn create wagmi
+ls
+cd ..
+ls
+yarn create wagmi
+mkdir wagmi test
+ls
+rm -rf test
+cd wagmi
+git init
+ls
+yarn create wagmi
+cd ..
+cd droplets
+cd frontend
+yarn add  @rainbow-me/rainbowkit wagmi viem@2.x @tanstack/react-query
+yarn dev
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn dev
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+cd foundry-nft
+ls
+git add --all
+git commit -m 'NFT Progress'
+cd frontend
+yarn start
+ls
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn start
+cd ../movolab-backend
+yarn dev
+cd ../movolab-frontend
+yarn start
+cd movolab-backend
+yarn dev
+cd foundry-defi
+forge init
+forge install openzeppelin/openzeppelin-contracts --no-commit
+forge build
+forge build
+forge build
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge build
+git add --all
+git history
+git log
+git commit -m 'Implement Stablecoin - In progress'
+cd ..
+cd foundry-fund-me
+git st
+git status
+yarn dev
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+cd Projects/Movolab
+ls
+code .
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+cd ..
+cd movolab-backend
+yarn dev
+yarn start
+yarn start
+yarn start
+yarn start
+yarn dev
+yarn dev
+cd foundry-defi
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+cd ..
+cd movolab-backend
+yarn dev
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+cd ..
+cd contracts
+mkdir contracts
+cd contracts
+forge init
+cd ..
+cd ..
+mkdir droplets_contracts
+cd droplets
+rm -rf contracts
+cd ..
+cd droplets_contracts
+forge init
+forge install @openzeppelin/contracts
+forge install @openzeppelin/contracts --no-commit
+forge install @openzeppelin/contracts --no-commit
+forge install openzeppelin/contracts --no-commit
+forge install OpenZeppelin/openzeppelin-contracts --no-commit\
+
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+cd frontend
+yarn dev
+cd ../droplets_contracts
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge compile
+forge test
+forge test -vvvv
+forge compile
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge compile
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge test -vvvv
+forge compile
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge compile
+forge test -vvvv
+cd ..
+cd movolab-backend
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+cd src/routes/client
+cd src/routes/client
+cd src/routes/clients
+cd ../..
+cd ..
+yarn dev
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+git push heroku-dev dev:main
+git branch
+git push heroku-dev updates:main
+yarn start
+yarn start
+yarn start
+yarn start
+yarn dev
+yarn dev
+yarn start
+cd foundry-test
+cd foundry-defi
+forge build
+forge build
+forge build
+forge test
+forge test -vvvv
+git add --all
+git commit -m 'Update'
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge build
+forge build
+forge build
+forge build
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge compile
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge test -vvvv
+forge compile
+forge test -vvvv
+forge compile
+forge test -vvvv
+cd foundry-defi
+source .env
+forge test --fork-url $SEPOLIA_RPC_URL
+git add --all
+git commit -m 'Add tests'
+forge compile
+forge compile
+forge build
+git add --all
+git commit -m 'Temp'
+cd frontend
+yarn dev
+yarn add axios
+yarn dev
+forge compile
+cd foundry-defi
+forge compile
+forge compile
+forge compile
+forge compile
+forge build
+forge compile
+forge compile
+forge build
+forge test
+git status
+git add --all
+git commit -m 'More stuff in DSCEngine'
+forge build
+forge test
+forge coverage
+heroku login
+cd ../movolab-frontend
+git pull origin dev
+git push heroku-dev dev:main
+git push heroku-dev updates:main
+git push heroku-dev updates:main
+git push heroku-dev updates:main
+git pull origin main
+git status
+git diff
+git checkout main
+git push heroku-prod main
+git branch
+git pull origin main
+git commit -m 'Merge main'
+cd ../movolab-backend
+yarn dev
+yarn dev
+cd ..
+cd movolab-frontend
+yarn start
+ls
+cd frontend
+yarn dev
+forge build
+forge test
+forge compile
+forge test
+forge test
+forge compile
+forge compile
+forge compile
+forge compile
+forge test
+forge compile
+forge test
+forge test
+forge compile
+forge compile
+forge test
+forge compile
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test
+forge test
+forge test
+forge test
+forge test --help
+forge test --match-test testWithdrawWithExitFee
+forge test --match-test testWithdrawWithExitFee -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge compile
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+cd ../movolab-frontend
+yarn start
+yarn start
+git checkout
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+yarn start
+cd ..
+cd movolab-backend
+yarn dev
+yarn dev
+cd foundry-defi
+forge coverage
+forge test
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge console -vvvv
+forge test -m testGetTokenAmountFromUsd -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge test -vvvv
+forge coverage
+forge coverage --debug
+forge coverage --debug lines
+forge coverage --debug lines
+forge test -vvvv
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+yarn start
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+git checkout main
+git branch
+git push heroku-prod main
+git push heroku-prod main
+git push heroku-prod main
+yarn start
+git push heroku-prod main
+git push heroku-prod main
+git push heroku-dev main
+cd ../movolab-backend
+git push heroku-dev main
+yarn dev
+cd
+python -m pip install aider-chat
+python3 -m pip install aider-chat
+aider --4o --openai-api-key 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
+cd Projects/Movolab
+cd movolab-frontend
+aider
+aider --4o --openai-api-key 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
+aider --4o --openai-api-key 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 
+yarn start
+yarn start
+cd ../movolab-frontend
+yarn start
+yarn start
+yarn start
+aider
+aider --4o --openai-api-key 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 
+cd ../movolab-backend
+yarn dev
+yarn dev
+git branch
+git pull origin main
+yarn start
+aider --4o --openai-api-key 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 
+yarn staert
+yarn start
+git push heroku-dev main
+git branch
+git pull origin main
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+yarn dev
+yarn dev
+yarn start
+cd ../movolab-backend
+yarn dev
+cd ../movolab-frontend
+yarn start
+cd ../movolab-backend
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+cd ..
+cd movolab-frontend
+aider --4o --openai-api-key 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 
+cd ..
+cd movolab-frontend
+yarn start
+yarn start
+yarn start
+yarn start
+git push heroku-dev dev:main
+yarn start
+yarn start
+yarn start
+yarn dev
+yarn dev
+cd ..
+cd movolab-backend
+yarn dev
+yarn dev
+yarn dev
+yarn dev
+yarn start
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+git push heroku-dev dev:main
+cd ..
+cd movolab-frontend
+yarn start
+git push heroku-dev dev:main
+yarn start
+yarn start
+yarn start
+yarn start
+yarn dev
+cd ../movolab-frontend
+yarn start
+git push heroku-dev dev:main
+yarn start
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+forge test
+aider --4o --openai-api-key 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 
+cd foundry-defi
+aider --4o --openai-api-key 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 
