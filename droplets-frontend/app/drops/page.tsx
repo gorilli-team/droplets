@@ -1,9 +1,9 @@
 "use client";
-import { Layout } from "@/components/Layout";
-import { mockedDrops } from "@/mockedData/mockedDrops";
-import DeployVault from "@/components/DeployVault";
+import { Layout } from "../../src/components/Layout";
+import { mockedDrops } from "../../src/mockedData/mockedDrops";
+import DeployVault from "../../src/components/DeployVault";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/UI/button";
+import { Button } from "../../src/components/UI/button";
 import {
   Card,
   CardContent,
@@ -11,10 +11,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/UI/card";
+} from "../../src/components/UI/card";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
-import DeployVaultModal from "@/components/DeployVault";
-import { useApi, Vault } from "@/hooks/useApi";
+import DeployVaultModal from "../../src/components/DeployVault";
+import { useApi, Vault } from "../../src/hooks/useApi";
 import { useAccount } from "@particle-network/connectkit";
 import { useAsyncMemo } from "use-async-memo";
 
