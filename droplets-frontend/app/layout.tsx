@@ -1,4 +1,4 @@
-import { ParticleConnectkit } from "@/connectkit";
+import { ParticleConnectkit } from "../src/connectkit";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";

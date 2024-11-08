@@ -1,6 +1,6 @@
 // app/profile/[handle]/page.tsx
-import { Layout } from "@/components/Layout";
-import ProfileDetailsClient from "@/components/Profile/ProfileDetailsClient";
+import { Layout } from "../../../src/components/Layout";
+import ProfileDetailsClient from "../../../src/components/Profile/ProfileDetailsClient";
 
 interface ProfileDetailsProps {
   params: {

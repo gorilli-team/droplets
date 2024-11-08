@@ -1,6 +1,6 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { Button } from '@/components/UI/button';
+"use client";
+import { useEffect, useState } from "react";
+import { Button } from "../UI/button";
 import {
   Card,
   CardContent,
@@ -8,16 +8,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/UI/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/UI/avatar';
-import { Badge } from '@/components/UI/badge';
-import { Modal } from '@/components/UI/modal';
-import { Edit, Lock, Plus, Settings, Shield } from 'lucide-react';
-import DeployVaultModal from '@/components/DeployVault';
-import DepositToVault from '../DepositToVault';
-import { useApi, Vault } from '@/hooks/useApi';
-import { useAccount } from '@particle-network/connectkit';
-import { useAsyncMemo } from 'use-async-memo';
+} from "../UI/card";
+import { Avatar, AvatarFallback, AvatarImage } from "../UI/avatar";
+import { Badge } from "../UI/badge";
+import { Modal } from "../UI/modal";
+import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
+import DeployVaultModal from "../DeployVault";
+import DepositToVault from "../DepositToVault";
+import { useApi, Vault } from "@/hooks/useApi";
+import { useAccount } from "@particle-network/connectkit";
+import { useAsyncMemo } from "use-async-memo";
 
 export default function UserProfile() {
   const { fetchVaults } = useApi();
@@ -25,16 +25,20 @@ export default function UserProfile() {
   const [showCreateVaultModal, setShowCreateVaultModal] = useState(false);
   const [showDepositModal, setShowDepositModal] = useState(false);
   const [refresh, setRefresh] = useState(false);
-  const [selectedVaultAddress, setSelectedVaultAddress] = useState('');
-  const [selectedVaultId, setSelectedVaultId] = useState('');
-  const [backers, setBackers] = useState<{ address: string; value: number }[]>([]);
+  const [selectedVaultAddress, setSelectedVaultAddress] = useState("");
+  const [selectedVaultId, setSelectedVaultId] = useState("");
+  const [backers, setBackers] = useState<{ address: string; value: number }[]>(
+    []
+  );
   const [vaultTotals, setVaultTotals] = useState<Record<string, number>>({});
-  const [loadingTotals, setLoadingTotals] = useState<Record<string, boolean>>({});
+  const [loadingTotals, setLoadingTotals] = useState<Record<string, boolean>>(
+    {}
+  );
   const [vaultsLoading, setVaultsLoading] = useState<boolean>(true);
 
   const ethToUsd = async (eth: number) => {
     const response = await fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`,
+      `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`
     );
     const data = await response.json();
     console.log(eth * data.ethereum.usd);
@@ -68,7 +72,10 @@ export default function UserProfile() {
       for (const vault of vaults) {
         setLoadingTotals((prev) => ({ ...prev, [vault._id as string]: true })); // Mark as loading
 
-        const totalEth = vault.backers.reduce((acc, cur) => acc + (cur.value || 0), 0);
+        const totalEth = vault.backers.reduce(
+          (acc, cur) => acc + (cur.value || 0),
+          0
+        );
         const usdValue = await ethToUsd(totalEth);
         setVaultTotals((prev) => ({
           ...prev,
@@ -84,12 +91,17 @@ export default function UserProfile() {
   return (
     <div className="p-6 space-y-8">
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold tracking-tight">Welcome back, luduvigo</h2>
+        <h2 className="text-3xl font-bold tracking-tight">
+          Welcome back, luduvigo
+        </h2>
 
         <Card>
           <CardHeader className="flex flex-row items-center gap-4">
             <Avatar className="w-16 h-16">
-              <AvatarImage src="/placeholder.svg?height=64&width=64" alt="Alex" />
+              <AvatarImage
+                src="/placeholder.svg?height=64&width=64"
+                alt="Alex"
+              />
               <AvatarFallback>L</AvatarFallback>
             </Avatar>
             <div>
@@ -138,14 +150,18 @@ export default function UserProfile() {
                   </CardTitle>
                   <CardDescription>2%</CardDescription>
                   <CardDescription>
-                    Total:{' '}
+                    Total:{" "}
                     {loadingTotals[vault._id as string]
-                      ? 'Loading...'
+                      ? "Loading..."
                       : `$${vaultTotals[vault._id as string]?.toFixed(2) || 0}`}
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button variant="outline" className="w-full" onClick={() => handleDeposit(vault)}>
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    onClick={() => handleDeposit(vault)}
+                  >
                     <Shield className="w-4 h-4 mr-2" />
                     Deposit
                   </Button>
@@ -157,7 +173,10 @@ export default function UserProfile() {
           )}
         </div>
         {showCreateVaultModal && (
-          <Modal isOpen={showCreateVaultModal} onClose={() => setShowCreateVaultModal(false)}>
+          <Modal
+            isOpen={showCreateVaultModal}
+            onClose={() => setShowCreateVaultModal(false)}
+          >
             <DeployVaultModal
               customCallback={() => {
                 setRefresh(!refresh);
@@ -166,7 +185,10 @@ export default function UserProfile() {
           </Modal>
         )}
         {showDepositModal && (
-          <Modal isOpen={showDepositModal} onClose={() => setShowDepositModal(false)}>
+          <Modal
+            isOpen={showDepositModal}
+            onClose={() => setShowDepositModal(false)}
+          >
             <DepositToVault
               address={selectedVaultAddress as `0x${string}`}
               id={selectedVaultId}

@@ -2,13 +2,13 @@
 "use client";
 
 import { useQuery } from "@apollo/client";
-import Spinner from "@/components/Spinner";
+import Spinner from "../Spinner";
 import {
   GET_PROFILE_BY_HANDLE,
   GET_PUBLICATIONS_BY_PROFILE_ID,
-} from "@/lib/queries";
-import { convertIpfsToHttp } from "@/utils";
-import { Profile } from "@/types/Profile";
+} from "../../lib/queries";
+import { convertIpfsToHttp } from "../../utils";
+import { Profile } from "../../types/Profile";
 
 interface ProfileDetailsClientProps {
   handle: string;

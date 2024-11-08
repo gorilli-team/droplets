@@ -10,9 +10,9 @@ import { encodeFunctionData, parseEther } from "viem";
 import { arbitrum } from "viem/chains";
 
 // Import contract ABI and bytecode
-import dropletsVaultAbi from "@/abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
+import dropletsVaultAbi from "../abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
 import { erc20Abi } from "viem";
-import { useApi } from "@/hooks/useApi";
+import { useApi } from "../hooks/useApi";
 
 interface Props {
   address: `0x${string}`;

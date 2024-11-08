@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Root, Image, Fallback } from "@radix-ui/react-avatar";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof Root>,
