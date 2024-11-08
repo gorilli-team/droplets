@@ -1,7 +1,3 @@
-Here's a `README.md` for Droplets:
-
----
-
 # Droplets
 
 Imagine a world where anyone can invest in the next big idea, no matter their background or location. Droplets is pioneering a new era of DeFi investing by combining the security of **ERC4626** vaults with the power of Web3 social media such as Lens and Farcaster to create a transparent and trust-driven platform.
