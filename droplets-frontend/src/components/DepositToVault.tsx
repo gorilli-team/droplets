@@ -12,18 +12,27 @@ import { arbitrum } from "viem/chains";
 // Import contract ABI and bytecode
 import dropletsVaultAbi from "@/abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
 import { erc20Abi } from "viem";
+import { useApi } from "@/hooks/useApi";
 
-export default function DepositToVault() {
+interface Props {
+  address: `0x${string}`;
+  id: string;
+  backers: { value: number; address: string }[];
+  customCallback: () => void;
+}
+
+export default function DepositToVault(props: Props) {
+  const { customCallback, address: vaultAddress, id, backers } = props;
   const { address, isConnected } = useAccount();
   const publicClient = usePublicClient();
   const [primaryWallet] = useWallets();
+  const { updateVault } = useApi();
 
   // State variables for deposit
   const [receiver, setReceiver] = useState<string>("");
   const [assets, setAssets] = useState<string>("");
   const [isDepositing, setIsDepositing] = useState<boolean>(false);
   const [transactionHash, setTransactionHash] = useState<string>("");
-  const vaultAddress = "0xd0a0acef79a2053c5d34464c5c1ba80524295724";
 
   // Function to approve the vault contract to spend the specified amount of tokens
   const approveTokens = async (amountInWei: bigint, tokenAddress: string) => {
@@ -78,7 +87,7 @@ export default function DepositToVault() {
   // Function to deposit assets into the vault
   const deposit = async () => {
     const tokenAddress = "0x82af49447d8a07e3bd95bd0d56f35241523fbab1";
-    if (!address || !publicClient || !receiver || !assets) {
+    if (!address || !publicClient || !assets) {
       alert("Please connect your wallet and provide all inputs.");
       return;
     }
@@ -105,14 +114,18 @@ export default function DepositToVault() {
       const depositData = encodeFunctionData({
         abi,
         functionName: "deposit", // assuming there's a public `deposit` function
-        args: [assetsInWei, receiver],
+        args: [assetsInWei, vaultAddress],
       });
+
+      console.log({ vaultAddress });
 
       const gasEstimate = await publicClient.estimateGas({
         account: address as `0x${string}`,
         to: vaultAddress,
         data: depositData,
       });
+
+      console.log({ gasEstimate });
 
       // Get the wallet client from the primary wallet
       const walletClient = primaryWallet.getWalletClient();
@@ -134,6 +147,20 @@ export default function DepositToVault() {
       if (receipt) {
         setTransactionHash(txHash);
         alert(`Deposit successful! Transaction hash: ${txHash}`);
+
+        const value = parseFloat(assets);
+
+        updateVault(id, {
+          backers: [
+            ...backers,
+            {
+              value,
+              address,
+            },
+          ],
+        });
+
+        customCallback();
       }
     } catch (error) {
       console.error("Error depositing to vault:", error);
@@ -149,15 +176,6 @@ export default function DepositToVault() {
 
       {/* Form to accept deposit inputs */}
       <div className="w-full max-w-md">
-        <label className="block mb-2">Receiver Address:</label>
-        <input
-          type="text"
-          value={receiver}
-          onChange={(e) => setReceiver(e.target.value)}
-          placeholder="Enter receiver address"
-          className="w-full p-2 mb-4 rounded bg-gray-800 text-white"
-        />
-
         <label className="block mb-2">Assets to Deposit (in ETH):</label>
         <input
           type="text"
@@ -177,13 +195,13 @@ export default function DepositToVault() {
 
         {transactionHash && (
           <div className="mt-4 p-2 bg-green-600 rounded text-white">
-            Deposit successful! Transaction hash:{" "}
+            Deposit successful! Transaction{" "}
             <a
               href={`https://arbiscan.io/tx/${transactionHash}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {transactionHash}
+              here
             </a>
           </div>
         )}

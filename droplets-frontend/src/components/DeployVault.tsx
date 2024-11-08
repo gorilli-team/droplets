@@ -10,21 +10,29 @@ import {
 } from "@particle-network/connectkit";
 import { encodeDeployData } from "viem";
 import { arbitrum } from "viem/chains";
+import { useApi } from "@/hooks/useApi";
 
 // Import contract ABI and bytecode
 import dropletsVaultAbi from "@/abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
 
-export default function DeployVault() {
+interface Props {
+  customCallback: () => void;
+}
+
+export default function DeployVault(props: Props) {
+  const { customCallback } = props;
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   const publicClient = usePublicClient();
   const [primaryWallet] = useWallets(); // Get the primary wallet from Particle Connect
+  const { createVault } = useApi();
   const [isMounted, setIsMounted] = useState(false);
 
   const [assetAddress, setAssetAddress] = useState("");
   const [basisPoints, setBasisPoints] = useState("");
   const [deploymentAddress, setDeploymentAddress] = useState<string>("");
   const [isDeploying, setIsDeploying] = useState(false);
+  const [vaultName, setVaultName] = useState("");
 
   useEffect(() => {
     setIsMounted(true);
@@ -33,10 +41,6 @@ export default function DeployVault() {
   if (!isMounted) {
     return null;
   }
-
-  const handleDisconnect = () => {
-    disconnect();
-  };
 
   const deployContract = async () => {
     if (!address || !publicClient) {
@@ -83,6 +87,18 @@ export default function DeployVault() {
       if (receipt?.contractAddress) {
         console.log("Contract deployed at:", receipt.contractAddress);
         setDeploymentAddress(receipt.contractAddress);
+
+        // Create a new vault
+        await createVault({
+          ownerAddress: address,
+          vaultAddress: receipt.contractAddress,
+          name: vaultName,
+          imageUrl: "",
+          backers: [],
+        });
+
+        customCallback();
+
         console.log("Contract deployed at:", receipt.contractAddress);
         alert(`Contract deployed successfully at: ${receipt.contractAddress}`);
       } else {
@@ -106,6 +122,15 @@ export default function DeployVault() {
           <>
             {/* Deployment Form */}
             <div className="w-full max-w-md">
+              <label className="block mb-2">Vault name:</label>
+              <input
+                type="text"
+                value={vaultName}
+                onChange={(e) => setVaultName(e.target.value)}
+                placeholder="Enter Vault name"
+                className="w-full p-2 mb-4 rounded bg-gray-800 text-white"
+              />
+
               <label className="block mb-2">Asset Address:</label>
               <input
                 type="text"
