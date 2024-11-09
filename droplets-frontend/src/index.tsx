@@ -29,14 +29,6 @@ export default function Index() {
               </button>
             </Link>
           </div>
-
-          <div className="absolute bottom-10 w-full text-center">
-            <a href="#about" className="text-gray-300 hover:text-white">
-              <span className="material-icons animate-bounce text-3xl">
-                expand_more
-              </span>
-            </a>
-          </div>
         </section>
 
         {/* About Section */}
