@@ -26,7 +26,7 @@ export default function Sidebar() {
               Drops
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/profiles" className="block p-2 rounded hover:bg-purple-500 transition">
               Profiles
             </Link>
@@ -35,7 +35,7 @@ export default function Sidebar() {
             <Link href="/contact" className="block p-2 rounded hover:bg-purple-500 transition">
               Contact
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </aside>
