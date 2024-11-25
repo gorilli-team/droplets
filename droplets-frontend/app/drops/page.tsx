@@ -96,7 +96,7 @@ export default function Drops() {
               <div className="flex items-center justify-center h-full">
                 <div className="text-center p-6 border rounded-lg shadow-lg bg-white">
                   <h2 className="text-2xl font-bold mb-4">Connect Your Wallet</h2>
-                  <p className="mb-4">Please connect your wallet to see the vaults.</p>
+                  <p className="mb-4">Please connect your wallet to see the Drops available.</p>
                 </div>
               </div>
             ) : (

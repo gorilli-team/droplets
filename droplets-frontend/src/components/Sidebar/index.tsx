@@ -36,6 +36,11 @@ export default function Sidebar() {
               Contact
             </Link>
           </li> */}
+          <li>
+            <Link href="/docs" className="block p-2 rounded hover:bg-purple-500 transition">
+              Documentation
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>
