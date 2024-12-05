@@ -90,41 +90,36 @@ export default function UserProfile() {
 
   return (
     <div className="p-6 space-y-8">
-      <section className="space-y-6">
-        <h2 className="text-3xl font-bold tracking-tight">
-          Welcome back, luduvigo
+      <section className="space-y-4">
+        <h2 className="text-3xl text-white font-bold tracking-tight border-b-gray-800 border-b-2 pb-3">
+          Welcome back, luduvigo!
         </h2>
 
         <Card>
-          <CardHeader className="flex flex-row items-center gap-4">
-            <Avatar className="w-16 h-16">
-              <AvatarImage
-                src="/placeholder.svg?height=64&width=64"
-                alt="Alex"
-              />
-              <AvatarFallback>L</AvatarFallback>
-            </Avatar>
-            <div>
-              <CardTitle>luduvigo</CardTitle>
-              <CardDescription>Premium Member</CardDescription>
+          <CardHeader className="flex flex-row justify-between">
+            <div className="flex flex-row items-center gap-4">
+              <Avatar className="w-20 h-20">
+                <AvatarImage
+                  src="/img/profilePictures/luduvigoevil.png"
+                  alt="Alex"
+                />
+                <AvatarFallback>L</AvatarFallback>
+              </Avatar>
+              <div>
+                <CardTitle>luduvigo.lens</CardTitle>
+              </div>
             </div>
-          </CardHeader>
-          <CardContent className="grid gap-2">
-            <div className="flex items-center gap-2">
-              <Badge variant="secondary">{vaults?.length || 0} Drops</Badge>
-              <Badge variant="secondary">2 Shared</Badge>
-            </div>
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline" size="sm">
-              <Edit className="w-4 h-4 mr-2" />
-              Edit Profile
-            </Button>
-            <Button variant="outline" size="sm">
+            <Button size="sm">
               <Settings className="w-4 h-4 mr-2" />
               Account Settings
             </Button>
-          </CardFooter>
+          </CardHeader>
+          <CardContent className="grid gap-2">
+            <div className="flex items-center gap-2">
+              <Badge>{vaults?.length || 0} Drops</Badge>
+              <Badge>2 Shared</Badge>
+            </div>
+          </CardContent>
         </Card>
       </section>
 

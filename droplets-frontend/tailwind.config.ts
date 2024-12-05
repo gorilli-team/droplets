@@ -43,6 +43,9 @@ const config: Config = {
           900: "var(--color-blue-900)",
         },
       },
+      borderWidth: {
+        "0.5": "0.5px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
