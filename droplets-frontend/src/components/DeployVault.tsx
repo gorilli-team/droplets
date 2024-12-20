@@ -14,6 +14,7 @@ import { useApi } from "../hooks/useApi";
 
 // Import contract ABI and bytecode
 import dropletsVaultAbi from "../abi/DropletsVaultAbi.json"; // Replace with actual ABI and bytecode
+import { Button } from "./ui/button";
 
 interface Props {
   customCallback: () => void;
@@ -22,9 +23,8 @@ interface Props {
 export default function DeployVault(props: Props) {
   const { customCallback } = props;
   const { address, isConnected } = useAccount();
-  const { disconnect } = useDisconnect();
   const publicClient = usePublicClient();
-  const [primaryWallet] = useWallets(); // Get the primary wallet from Particle Connect
+  const [primaryWallet] = useWallets();
   const { createVault } = useApi();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -113,49 +113,48 @@ export default function DeployVault(props: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center p-8 text-black">
-      <h2 className="text-3xl font-bold mb-4">Deploy new Droplets Vault</h2>
-
+    <div className="flex flex-col text-white bg-gray-800 p-6">
       {/* Connect Button */}
       <div>
         {isConnected ? (
           <>
             {/* Deployment Form */}
             <div className="w-full max-w-md">
-              <label className="block mb-2">Vault name:</label>
+              <label className="block mb-2 text-sm">Vault name:</label>
               <input
                 type="text"
                 value={vaultName}
                 onChange={(e) => setVaultName(e.target.value)}
-                placeholder="Enter Vault name"
-                className="w-full p-2 mb-4 rounded bg-gray-800 text-white"
+                placeholder="Vault name"
+                className="w-full px-4 py-3 mb-4 rounded-lg bg-gray-700 text-sm text-gray-400 border-gray-600"
               />
 
-              <label className="block mb-2">Asset Address:</label>
+              <label className="block mb-2 text-sm">ERC20 Asset Address:</label>
               <input
                 type="text"
                 value={assetAddress}
                 onChange={(e) => setAssetAddress(e.target.value)}
-                placeholder="Enter ERC20 asset address"
-                className="w-full p-2 mb-4 rounded bg-gray-800 text-white"
+                placeholder="ERC20 asset address"
+                className="w-full px-4 py-3 mb-4 rounded-lg bg-gray-700 text-sm text-gray-400 border-gray-600"
               />
 
-              <label className="block mb-2">Entry Fee Basis Points:</label>
+              <label className="block mb-2 text-sm">Fee Basis Points:</label>
               <input
                 type="number"
                 value={basisPoints}
                 onChange={(e) => setBasisPoints(e.target.value)}
-                placeholder="Enter basis points (e.g., 500)"
-                className="w-full p-2 mb-4 rounded bg-gray-800 text-white"
+                placeholder="Basis points (e.g., 500)"
+                className="w-full px-4 py-3 mb-4 rounded-lg bg-gray-700 text-sm text-gray-400 border-gray-600"
               />
 
-              <button
+              <Button
                 onClick={deployContract}
                 disabled={isDeploying}
-                className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 rounded text-white"
+                variant={"default"}
+                size="full"
               >
                 {isDeploying ? "Deploying..." : "Deploy Contract"}
-              </button>
+              </Button>
 
               {deploymentAddress && (
                 <div className="mt-4 p-2 bg-green-600 rounded text-white">

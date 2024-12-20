@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import { Modal } from "./modal";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
-import DeployVaultModal from "../DeployVault";
+import DeployVault from "../DeployVault";
 import DepositToVault from "../DepositToVault";
 import { useApi, Vault } from "../../hooks/useApi";
 import { useAccount } from "@particle-network/connectkit";
@@ -185,23 +185,9 @@ export default function UserProfile() {
           <Modal
             isOpen={showCreateVaultModal}
             onClose={() => setShowCreateVaultModal(false)}
+            title={"Deploy new Droplets Vault"}
           >
-            <DeployVaultModal
-              customCallback={() => {
-                setRefresh(!refresh);
-              }}
-            />
-          </Modal>
-        )}
-        {showDepositModal && (
-          <Modal
-            isOpen={showDepositModal}
-            onClose={() => setShowDepositModal(false)}
-          >
-            <DepositToVault
-              address={selectedVaultAddress as `0x${string}`}
-              id={selectedVaultId}
-              backers={backers}
+            <DeployVault
               customCallback={() => {
                 setRefresh(!refresh);
               }}
