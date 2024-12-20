@@ -153,7 +153,7 @@ export default function DeployVault(props: Props) {
                 variant={"default"}
                 size="full"
               >
-                {isDeploying ? "Deploying..." : "Deploy Contract"}
+                {isDeploying ? "Deploying..." : "Deploy contract"}
               </Button>
 
               {deploymentAddress && (

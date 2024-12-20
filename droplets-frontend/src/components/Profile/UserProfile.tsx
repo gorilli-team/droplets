@@ -141,7 +141,7 @@ export default function UserProfile() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {vaultsLoading ? (
-            <p>Loading vaults...</p>
+            <p className="text-white justify-center">Loading vaults...</p>
           ) : Array.isArray(vaults) && vaults.length > 0 ? (
             vaults.map((vault) => (
               <Card key={vault._id}>
