@@ -7,6 +7,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
+  CardRow,
   CardTitle,
 } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -18,6 +19,7 @@ import DepositToVault from "../DepositToVault";
 import { useApi, Vault } from "../../hooks/useApi";
 import { useAccount } from "@particle-network/connectkit";
 import { useAsyncMemo } from "use-async-memo";
+import BaseLogo from "src/assets/svg/BaseLogo";
 
 export default function UserProfile() {
   const { fetchVaults } = useApi();
@@ -109,7 +111,7 @@ export default function UserProfile() {
                 <CardTitle>luduvigo.lens</CardTitle>
               </div>
             </div>
-            <Button size="sm">
+            <Button variant={"secondary"} size="sm">
               <Settings className="w-4 h-4 mr-2" />
               Account Settings
             </Button>
@@ -124,10 +126,15 @@ export default function UserProfile() {
       </section>
 
       <section className="space-y-6">
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold tracking-tight">Your Drops</h2>
+        <div className="flex justify-between items-center border-b-gray-800 border-b-2 pb-3">
+          <div className="flex flex-col">
+            <h2 className="text-xl text-white font-semibold tracking-tight">
+              Your Drops
+            </h2>
+            <h3 className="text-white tracking-tight">Manage your drops</h3>
+          </div>
           <Button onClick={handleCreateVault}>
-            <Plus className="w-4 h-4 mr-2" />
+            <Plus className="w-4 h-4" />
             Create New Drop
           </Button>
         </div>
@@ -140,27 +147,34 @@ export default function UserProfile() {
               <Card key={vault._id}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Lock className="w-5 h-5" />
                     {vault.name}
                   </CardTitle>
-                  <CardDescription>2%</CardDescription>
-                  <CardDescription>
-                    Total:{" "}
+                </CardHeader>
+                <CardRow>
+                  <Badge>
+                    30D APY: &nbsp; <b>{(Math.random() * 5).toFixed(2)}%</b>
+                  </Badge>
+                  <Badge>
+                    TVL:{" "}
                     {loadingTotals[vault._id as string]
                       ? "Loading..."
                       : `$${vaultTotals[vault._id as string]?.toFixed(2) || 0}`}
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
+                  </Badge>
+                  <Badge>
+                    <BaseLogo className="w-4 h-4" />
+                    Base
+                  </Badge>
+                </CardRow>
+                <CardRow>
                   <Button
                     variant="outline"
                     className="w-full"
                     onClick={() => handleDeposit(vault)}
                   >
-                    <Shield className="w-4 h-4 mr-2" />
-                    Deposit
+                    <Settings className="w-4 h-4" />
+                    Manage
                   </Button>
-                </CardFooter>
+                </CardRow>
               </Card>
             ))
           ) : (
