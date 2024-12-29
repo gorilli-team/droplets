@@ -1,7 +1,4 @@
-import logo from "../src/assets/images/logo.png";
 import { ConnectButton } from "@particle-network/connectkit";
-import Image from "next/image";
-import Link from "next/link";
 
 import styles from "./index.module.css";
 
