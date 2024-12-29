@@ -40,9 +40,8 @@ export default function Drops() {
   const [showConnectWalletMessage, setShowConnectWalletMessage] =
     useState<boolean>(false);
 
-  const ethToUsd = async (eth: number) => {
+  const ethToUsd = async (eth: number): Promise<number> => {
     return eth * 3600; //TODO: use a proxy here
-    return;
     const response = await fetch(
       `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`
     );
