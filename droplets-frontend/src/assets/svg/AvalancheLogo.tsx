@@ -1,15 +1,12 @@
-import * as Types from "@/types";
+import React from "react";
 
-function AvalancheLogo(props: Types.OldChainLogoProps) {
-  const { customScale, size = "sm", ...rest } = props;
+interface Props {
+  className?: string;
+}
+
+function AvalancheLogo(props: Props) {
   return (
-    <svg
-      id="avalanche"
-      viewBox="0 0 60 60"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...rest}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" {...props}>
       <circle cx="30" cy="30" r="30" fill="#D64F4A" />
       <path
         fillRule="evenodd"

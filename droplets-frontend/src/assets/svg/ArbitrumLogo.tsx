@@ -1,14 +1,13 @@
-import * as Types from "@/types";
+import React from "react";
 
-function ArbitrumLogo(props: Types.OldChainLogoProps) {
-  const { customScale, size = "sm", ...rest } = props;
+interface Props {
+  className?: string;
+}
+
+function ArbitrumLogo(props: Props) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={size === "sm" ? "0 0 15 15" : "0 0 22 22"}
-      {...rest}
-    >
-      <g transform={`scale(${customScale || (size === "sm" ? 1 : 1.5)})`}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" {...props}>
+      <g>
         <path
           d="M1.1377 4.25963V9.75203C1.1377 10.1051 1.32264 10.4246 1.63089 10.6039L6.3891 13.3501C6.69174 13.5238 7.06724 13.5238 7.36988 13.3501L12.1281 10.6039C12.4307 10.4302 12.6213 10.1051 12.6213 9.75203V4.25963C12.6213 3.90655 12.4363 3.5871 12.1281 3.40775L7.36988 0.661554C7.06724 0.487815 6.69174 0.487815 6.3891 0.661554L1.63089 3.40775C1.32825 3.58149 1.1433 3.90655 1.1433 4.25963H1.1377Z"
           fill="#213147"
