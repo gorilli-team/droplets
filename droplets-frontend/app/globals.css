@@ -3,27 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --background-content: 245, 245, 247;
-  --background-header: 255, 255, 255;
-  --background-demo: 255, 255, 255;
-  --background-input-content: 245, 246, 251;
-  --divider-color: 245, 246, 251;
-}
+  --foreground-hex: #000000;
+  --background-start-hex: #d6dbdc;
+  --background-end-hex: #ffffff;
+  --background-content-hex: #f5f5f7;
+  --background-header-hex: #ffffff;
+  --background-demo-hex: #ffffff;
+  --background-input-content-hex: #f5f6fb;
+  --divider-color-hex: #f5f6fb;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 35, 37, 41;
-    --background-content: 35, 37, 41;
-    --background-header: 28, 29, 34;
-    --background-demo: 28, 29, 34;
-    --background-input-content: 35, 37, 41;
-    --divider-color: 41, 43, 54;
-  }
+  /* new colors from here */
+  --color-primary-900: #4a1d96;
+  --color-primary-800: #5521b5;
+  --color-primary-700: #6c28d9;
+  --color-primary-600: #7e3af2;
+  --color-primary-500: #9061f9;
+  --color-primary-400: #ac94fa;
+  --color-primary-300: #cabffd;
+  --color-primary-200: #dcd7fe;
+  --color-primary-100: #edebfe;
+  --color-primary-50: #f6f5ff;
+
+  --color-gray-900: #111928;
+  --color-gray-800: #1f2a37;
+  --color-gray-700: #374151;
+  --color-gray-600: #4b5563;
+  --color-gray-500: #6b7280;
+  --color-gray-400: #9ca3af;
+  --color-gray-300: #d1d5db;
+  --color-gray-200: #e5e7eb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-50: #f9fafb;
+
+  --color-blue-900: #233876;
+  --color-blue-800: #1e429f;
+  --color-blue-700: #1a56db;
+  --color-blue-600: #1c64f2;
+  --color-blue-500: #3f83f8;
+  --color-blue-400: #76a9fa;
+  --color-blue-300: #a4cafe;
+  --color-blue-200: #c3ddfd;
+  --color-blue-100: #e1effe;
+  --color-blue-50: #ebf5ff;
 }
 
 body {
@@ -96,14 +117,5 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

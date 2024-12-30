@@ -7,17 +7,19 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
+  CardRow,
   CardTitle,
 } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import { Modal } from "./modal";
 import { Edit, Lock, Plus, Settings, Shield } from "lucide-react";
-import DeployVaultModal from "../DeployVault";
+import DeployVault from "../DeployVault";
 import DepositToVault from "../DepositToVault";
 import { useApi, Vault } from "../../hooks/useApi";
 import { useAccount } from "@particle-network/connectkit";
 import { useAsyncMemo } from "use-async-memo";
+import BaseLogo from "src/assets/svg/BaseLogo";
 
 export default function UserProfile() {
   const { fetchVaults } = useApi();
@@ -90,82 +92,89 @@ export default function UserProfile() {
 
   return (
     <div className="p-6 space-y-8">
-      <section className="space-y-6">
-        <h2 className="text-3xl font-bold tracking-tight">
-          Welcome back, luduvigo
+      <section className="space-y-4">
+        <h2 className="text-3xl text-white font-bold tracking-tight border-b-gray-800 border-b-2 pb-3">
+          Welcome back, luduvigo!
         </h2>
 
         <Card>
-          <CardHeader className="flex flex-row items-center gap-4">
-            <Avatar className="w-16 h-16">
-              <AvatarImage
-                src="/placeholder.svg?height=64&width=64"
-                alt="Alex"
-              />
-              <AvatarFallback>L</AvatarFallback>
-            </Avatar>
-            <div>
-              <CardTitle>luduvigo</CardTitle>
-              <CardDescription>Premium Member</CardDescription>
+          <CardHeader className="flex flex-row justify-between">
+            <div className="flex flex-row items-center gap-4">
+              <Avatar className="w-20 h-20">
+                <AvatarImage
+                  src="/img/profilePictures/luduvigoevil.png"
+                  alt="Alex"
+                />
+                <AvatarFallback>L</AvatarFallback>
+              </Avatar>
+              <div>
+                <CardTitle>luduvigo.lens</CardTitle>
+              </div>
             </div>
-          </CardHeader>
-          <CardContent className="grid gap-2">
-            <div className="flex items-center gap-2">
-              <Badge variant="secondary">{vaults?.length || 0} Drops</Badge>
-              <Badge variant="secondary">2 Shared</Badge>
-            </div>
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline" size="sm">
-              <Edit className="w-4 h-4 mr-2" />
-              Edit Profile
-            </Button>
-            <Button variant="outline" size="sm">
+            <Button variant={"secondary"} size="sm">
               <Settings className="w-4 h-4 mr-2" />
               Account Settings
             </Button>
-          </CardFooter>
+          </CardHeader>
+          <CardContent className="grid gap-2">
+            <div className="flex items-center gap-2">
+              <Badge>{vaults?.length || 0} Drops</Badge>
+              <Badge>2 Shared</Badge>
+            </div>
+          </CardContent>
         </Card>
       </section>
 
       <section className="space-y-6">
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold tracking-tight">Your Drops</h2>
+        <div className="flex justify-between items-center border-b-gray-800 border-b-2 pb-3">
+          <div className="flex flex-col">
+            <h2 className="text-xl text-white font-semibold tracking-tight">
+              Your Drops
+            </h2>
+            <h3 className="text-white tracking-tight">Manage your drops</h3>
+          </div>
           <Button onClick={handleCreateVault}>
-            <Plus className="w-4 h-4 mr-2" />
+            <Plus className="w-4 h-4" />
             Create New Drop
           </Button>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {vaultsLoading ? (
-            <p>Loading vaults...</p>
+            <p className="text-white justify-center">Loading vaults...</p>
           ) : Array.isArray(vaults) && vaults.length > 0 ? (
             vaults.map((vault) => (
               <Card key={vault._id}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Lock className="w-5 h-5" />
                     {vault.name}
                   </CardTitle>
-                  <CardDescription>2%</CardDescription>
-                  <CardDescription>
-                    Total:{" "}
+                </CardHeader>
+                <CardRow>
+                  <Badge>
+                    30D APY: &nbsp; <b>{(Math.random() * 5).toFixed(2)}%</b>
+                  </Badge>
+                  <Badge>
+                    TVL:{" "}
                     {loadingTotals[vault._id as string]
                       ? "Loading..."
                       : `$${vaultTotals[vault._id as string]?.toFixed(2) || 0}`}
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
+                  </Badge>
+                  <Badge>
+                    <BaseLogo className="w-4 h-4" />
+                    Base
+                  </Badge>
+                </CardRow>
+                <CardRow>
                   <Button
                     variant="outline"
                     className="w-full"
                     onClick={() => handleDeposit(vault)}
                   >
-                    <Shield className="w-4 h-4 mr-2" />
-                    Deposit
+                    <Settings className="w-4 h-4" />
+                    Manage
                   </Button>
-                </CardFooter>
+                </CardRow>
               </Card>
             ))
           ) : (
@@ -176,23 +185,9 @@ export default function UserProfile() {
           <Modal
             isOpen={showCreateVaultModal}
             onClose={() => setShowCreateVaultModal(false)}
+            title={"Deploy new Droplets Vault"}
           >
-            <DeployVaultModal
-              customCallback={() => {
-                setRefresh(!refresh);
-              }}
-            />
-          </Modal>
-        )}
-        {showDepositModal && (
-          <Modal
-            isOpen={showDepositModal}
-            onClose={() => setShowDepositModal(false)}
-          >
-            <DepositToVault
-              address={selectedVaultAddress as `0x${string}`}
-              id={selectedVaultId}
-              backers={backers}
+            <DeployVault
               customCallback={() => {
                 setRefresh(!refresh);
               }}

@@ -1,46 +1,39 @@
 // components/Sidebar.tsx
-'use client';
-import Link from 'next/link';
-import { useAccount } from '@particle-network/connectkit';
+"use client";
+import Link from "next/link";
+import { useAccount } from "@particle-network/connectkit";
+import DropletsLogo from "src/assets/svg/DropletsLogo";
 
 export default function Sidebar() {
-  console.log('useAccount:', useAccount);
+  console.log("useAccount:", useAccount);
   const { isConnected } = useAccount();
 
+  const navigation = [
+    { name: "My Account", href: "/profile" },
+    // { name: "Agents", href: "/agents" },
+    { name: "Drops", href: "/drops" },
+    { name: "Docs", href: "/docs" },
+    // { name: "Help", href: "/help" },
+  ];
+
   return (
-    <aside className="bg-gray-200 p-4 w-full md:w-48 min-h-screen text-black font-semibold">
+    <aside className="bg-gray-800 p-6 w-full md:w-64 h-screen text-white font-semibold border-r border-gray-600">
+      <div className="flex flex-row gap-1.5 mb-3">
+        <DropletsLogo className="w-6 h-6" />
+        <h1 className="text-lg font-bold">Droplets</h1>
+      </div>
       <nav>
-        <ul className="space-y-4">
-          <li>
-            {isConnected && (
-              <li>
-                <Link
-                  href="/profile"
-                  className="block p-2 rounded bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition mb-4"
-                >
-                  My Account
-                </Link>
-              </li>
-            )}
-            <Link href="/drops" className="block p-2 rounded hover:bg-purple-500 transition">
-              Drops
-            </Link>
-          </li>
-          {/* <li>
-            <Link href="/profiles" className="block p-2 rounded hover:bg-purple-500 transition">
-              Profiles
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="block p-2 rounded hover:bg-purple-500 transition">
-              Contact
-            </Link>
-          </li> */}
-          <li>
-            <Link href="/docs" className="block p-2 rounded hover:bg-purple-500 transition">
-              Documentation
-            </Link>
-          </li>
+        <ul className="space-y-2">
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className="block px-2 py-1.5 rounded-md hover:bg-gray-700 transition"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>

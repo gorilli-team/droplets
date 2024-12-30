@@ -6,5 +6,5 @@ type ContainerProps = {
 };
 
 export const Container = ({ children }: ContainerProps) => {
-  return <div className="flex-1 flex text-black bg-white">{children}</div>;
+  return <div className="flex-grow bg-gray-900 min-h-full">{children}</div>;
 };

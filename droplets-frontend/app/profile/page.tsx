@@ -13,7 +13,7 @@ export default function ProfileDetails({ params }: ProfileDetailsProps) {
 
   return (
     <Layout>
-      <div className="w-full p-4 bg-gray-100">
+      <div className="w-full p-4 bg-gray-900">
         <UserProfile />
       </div>
     </Layout>
