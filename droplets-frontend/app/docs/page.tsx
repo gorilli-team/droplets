@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "src/components/ui/button";
 import { Layout } from "../../src/components/Layout";
 import { Github } from "lucide-react";
 
@@ -10,16 +11,18 @@ export default function Docs() {
           <h1 className="text-2xl text-white font-bold">
             Droplets Documentation
           </h1>
-          <div className="flex items-center mt-4">
-            <a
-              href="https://github.com/luduvigo/droplets"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
-            >
-              <Github className="mr-2" />
-              View on GitHub
-            </a>
+          <div className="flex items-center">
+            <Button>
+              <a
+                href="https://github.com/luduvigo/droplets"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-row"
+              >
+                <Github className="mr-2" />
+                View on GitHub
+              </a>
+            </Button>
           </div>
           <p className="text-lg">
             Welcome to the Droplets documentation! Here, you'll find everything
