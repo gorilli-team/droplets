@@ -10,10 +10,10 @@ export default function Sidebar() {
 
   const navigation = [
     { name: "My Account", href: "/profile" },
-    { name: "Agents", href: "/agents" },
+    // { name: "Agents", href: "/agents" },
     { name: "Drops", href: "/drops" },
     { name: "Docs", href: "/docs" },
-    { name: "Help", href: "/help" },
+    // { name: "Help", href: "/help" },
   ];
 
   return (
