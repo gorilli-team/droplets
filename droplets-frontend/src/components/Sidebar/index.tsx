@@ -17,7 +17,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="bg-gray-800 p-6 w-full md:w-64 min-h-screen text-white font-semibold border-r border-gray-600">
+    <aside className="bg-gray-800 p-6 w-full md:w-64 h-screen text-white font-semibold border-r border-gray-600">
       <div className="flex flex-row gap-1.5 mb-3">
         <DropletsLogo className="w-6 h-6" />
         <h1 className="text-lg font-bold">Droplets</h1>

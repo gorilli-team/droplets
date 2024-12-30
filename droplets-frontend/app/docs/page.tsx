@@ -5,9 +5,11 @@ import { Github } from "lucide-react";
 export default function Docs() {
   return (
     <Layout>
-      <div className="w-full mt-4 p-4">
+      <div className="w-full p-4 text-white">
         <div className="p-6 space-y-8">
-          <h1 className="text-3xl font-bold">Droplets Documentation</h1>
+          <h1 className="text-2xl text-white font-bold">
+            Droplets Documentation
+          </h1>
           <div className="flex items-center mt-4">
             <a
               href="https://github.com/luduvigo/droplets"

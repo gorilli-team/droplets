@@ -16,14 +16,14 @@ export const Layout = ({ children }: LayoutProps) => {
       <Sidebar />
 
       {/* Right Column */}
-      <div className="flex flex-col flex-grow">
+      <div className="flex flex-col flex-grow overflow-y-auto">
         {/* Header with fixed height */}
         <div className="h-20">
           <Header />
         </div>
 
         {/* Main content that grows to fill available space */}
-        <div className="flex-grow">
+        <div className="flex-grow overflow-y-auto">
           <Container>{children}</Container>
         </div>
 
